@@ -13,7 +13,7 @@ for i in range(l.count(' ')):
 l1=set(l)
 d=len(l1)
 w=w.split()
-l1=["and","of"]
+l1=["and","of"，"for","the"]
 for j in range(len(w)-1,-1,-1):
     if w[j] in l1:
         w.remove(w[j])
