@@ -50,7 +50,29 @@ def add_chengji():
 def search():
     for i in student_list:
         print('姓名'+i+' '+'成绩'+str(student_list[i]))
+def usr_login():
+    # 这两行代码就是获取用户输入的usr_name和usr_pwd
+    usr_name = var_usr_name.get()
+    usr_pwd = var_usr_pwd.get()
+    t1=teacher_account.get('admin').get('Name')+teacher_account.get('admin2').get('Name')
+    t2=teacher_account.get('admin').get('Pwd')+teacher_account.get('admin2').get('Pwd')
 
+    if usr_name in t1 and usr_pwd in t2:
+        yes=tk.Tk()
+        tk.messagebox.showinfo(title="欢迎", message="欢迎，教师" + usr_name)
+        window.destroy()
+        def creat1():
+            root = tk.Tk()
+            root.title('学生管理系统')
+            yes.destroy()         
+            def creat2():
+                root.destroy()
+            tk.Button(root, text='添加成绩', width=6, command=add_chengji).pack()
+            tk.Button(root, text='查看成绩', width=6, command=search).pack()
+            tk.Button(root, text='退出', width=6, command=creat2).pack()
+        tk.Button(yes,text='确定',command=creat1).pack()
+    else:
+        tk.messagebox.showerror(message="用户名或密码错误")
 
 btn_tuichu = tk.Button(window, text="退出", command=window.destroy)
 btn_tuichu.place(x=250, y=300)
