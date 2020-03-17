@@ -47,6 +47,9 @@ def add_chengji():
     else:
         add_score=simpledialog.askinteger('提示','请输入学生成绩',minvalue=1,maxvalue=100)
         student_list.setdefault(n,add_score)
+def search():
+    for i in student_list:
+        print('姓名'+i+' '+'成绩'+str(student_list[i]))
 
 
 btn_tuichu = tk.Button(window, text="退出", command=window.destroy)
