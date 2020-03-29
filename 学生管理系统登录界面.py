@@ -60,20 +60,22 @@ def usr_login():
     if usr_name in t1 and usr_pwd in t2:
         yes=tk.Tk()
         tk.messagebox.showinfo(title="欢迎", message="欢迎，教师" + usr_name)
-        window.destroy()
+        window.exits()
         def creat1():
             root = tk.Tk()
             root.title('学生管理系统')
-            yes.destroy()         
+            yes.exits()         
             def creat2():
-                root.destroy()
+                root.exits()
             tk.Button(root, text='添加成绩', width=6, command=add_chengji).pack()
             tk.Button(root, text='查看成绩', width=6, command=search).pack()
             tk.Button(root, text='退出', width=6, command=creat2).pack()
         tk.Button(yes,text='确定',command=creat1).pack()
     else:
         tk.messagebox.showerror(message="用户名或密码错误")
-
+def exits():
+    root.destroy()    
+#定义关闭窗口的函数
 btn_tuichu = tk.Button(window, text="退出", command=window.destroy)
 btn_tuichu.place(x=250, y=300)
 btn_login = tk.Button(window, text="Login", command=usr_login)
