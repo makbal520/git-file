@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 Created on Sat May 25 16:59:49 2019
 
@@ -81,6 +81,7 @@ btn_tuichu.place(x=250, y=300)
 btn_login = tk.Button(window, text="Login", command=usr_login)
 btn_login.place(x=155, y=300)
 window.mainloop()
+
 
 
     
